@@ -34,12 +34,11 @@ public class RayCaster : MonoBehaviour
                 //raycast hit controller in scene
 
                 DoorController door = hit.transform.GetComponentInParent<DoorController>();
-                if(door != null)
-                {
+                if(door != null) door.PlayerInteract(transform.parent.position);
 
-                    door.PlayerInteract(transform.parent.position);
-
-                }
+                ItemPickup pickup = hit.transform.GetComponent<ItemPickup>();
+                if (pickup != null) pickup.PlayerInteract();
+               
                
 
             }

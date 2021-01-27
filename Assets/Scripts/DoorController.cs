@@ -48,6 +48,8 @@ public class DoorController : MonoBehaviour
     {
         if (isAnimPlaying) return; // does nothing
 
+        if (!Inventory.main.hasKey) return;
+
         Vector3 disToPlayer = position - transform.position;
         disToPlayer = disToPlayer.normalized;
 
